@@ -25,8 +25,9 @@
     <div id="hb">
       <h3>Beispiel 1 Jahresputz</h3>
       <form id="edit" action="EditTODO.html">
-          <input type="submit" value="Edit" />
+          <input type="submit" value="Bearbeiten" />
       </form>
+      <button id="delete">Löschen</button>
     </div>
     <table class="table table-striped">
       <thead>
@@ -66,8 +67,9 @@
     <div id="hb">
       <h3>Beispiel 2 Einkaufen</h3>
       <form id="edit" action="EditTODO.html">
-          <input type="submit" value="Edit" />
+          <input type="submit" value="Bearbeiten" />
       </form>
+      <button id="delete">Löschen</button>
     </div>
     <table class="table table-striped">
       <thead>
@@ -101,8 +103,9 @@
     <div id="hb">
       <h3>Beispiel 3 Erledigungen</h3>
       <form id="edit" action="EditTODO.html">
-          <input type="submit" value="Edit" />
+          <input type="submit" value="Bearbeiten" />
       </form>
+      <button id="delete">Löschen</button>
     </div>
     <table class="table table-striped">
       <thead>
@@ -171,21 +174,26 @@ td {
   background-color: #f44336;
 }
 #edit {
-    margin: 25px 0px 0px 0px;
-    width: 200px;
-    padding: 5px;
-    font-size: 25px;
+  margin: 25px 0px 0px 0px;
+  width: 200px;
+  padding: 5px;
+  font-size: 25px;
 }
 #hb {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+#delete {
+  margin: 25px 0px 0px 0px;
+  font-size: 25px;
+}
 </style>
 
 <!-- Javascript -->
 <script>
-//close button for li
+//close button for li (maybe later)
+/*
 var todolist = document.getElementsByName("percent");
 for (var i = 0; i < todolist.length; i++) {
     var btn = document.createElement("button");
@@ -194,6 +202,7 @@ for (var i = 0; i < todolist.length; i++) {
     btn.appendChild(txt);
     todolist[i].appendChild(btn); 
 }
+*/
 
 /*add element maybe later
 function newElement() {

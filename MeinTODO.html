@@ -25,28 +25,41 @@
     <input type="text" id="title" placeholder="Title...">
     <input type="text" id="myInput" placeholder="Neuer Eintrag...">
     <span onclick="newElement()" class="addBtn">Hinzufügen</span>
-    <ul id="myTODO" class="list-group">
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked>
-          Eine TODO Liste erstellen
-        </li>
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          Ein Buch lesen
-        </li>
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          Joggen
-        </li>
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          Abwaschen
-        </li>
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          Den Stuhl reparieren
-        </li>
-      </ul>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Titel</th>
+          <th>Deadline</th>
+          <th>Fortschritt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-check-input me-1" type="checkbox">
+            Müll wegbringen</td>
+          <td>24.Mai 2022</td>
+          <td name="percent">15%</td>
+        </tr>
+        <tr>
+          <td><input class="form-check-input me-1" type="checkbox">
+            Plastikblumen bestellen</td>
+          <td>30.Juni 2020</td>
+          <td name="percent">10%</td>
+        </tr>
+        <tr>
+          <td><input class="form-check-input me-1" type="checkbox">
+            Garage reparieren</td>
+          <td>28.Juni 2023</td>
+          <td name="percent">25%</td>
+        </tr>
+        <tr>
+          <td><input class="form-check-input me-1" type="checkbox">
+            Garage reparieren</td>
+          <td>28.Juni 2023</td>
+          <td name="percent">25%</td>
+        </tr>
+      </tbody>
+    </table>
       <button id="addToMain">TODO zur Hauptseite hinzufügen</button>
 
 </body>
@@ -77,15 +90,9 @@ input {
   padding: 10px;
   font-size: 20px;
 }
-ul li {
+td {
   position: relative;
-  font-size: 30px;
-}
-ul li:nth-child(odd) {
-  background: #c6c6f0;
-}
-ul li:nth-child(even) {
-  background: #e2e2f1;
+  font-size: 20px;
 }
 .addBtn {
   padding: 15px;
@@ -117,6 +124,7 @@ ul li:nth-child(even) {
   padding: 20px;
   margin: 25px 10px;
 }
+
 </style>
 
 <!-- Javascript -->
@@ -130,8 +138,7 @@ for (var i = 0; i < todolist.length; i++) {
     btn.appendChild(txt);
     todolist[i].appendChild(btn); 
 }
-//close button hides element (maybe later)
-/*
+//close button hides element 
 var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
@@ -140,7 +147,7 @@ for (i = 0; i < close.length; i++) {
         div.style.display = "none";
     }
 }
-*/
+
 //add element(maybe later, some problems with adding checkbox)
 /*
 function newElement() {
