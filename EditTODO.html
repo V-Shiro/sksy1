@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <title>Edit TODO</title>
-    <meta name="author" content="Vincent Wehr">
+    <meta name="author" content="Vincent Wehr, Wael Muhsen">
     <meta name="keywords" content="Hausarbeit,Praktikum">
     <meta charset="UTF-8"/>
 
@@ -16,70 +16,88 @@
 </head>
 <body>
     <header>
-        <h1>Edit TODO</h1>
+        <h1><b>Edit TODO</b></h1>
     </header>
     <nav>
         <a href="TODO.html">Übersicht</a>
         <a href="MeinTODO.html">Mein TODO</a>
         <a href="Impressum.html">Impressum</a>
     </nav>
-    <input type="text" id="title" placeholder="Beispiel 2 Erledigungen">
+    <div id="hb">
+      <h3>Beispiel 1 Jahresputz</h3>
+      <button id="rename">Umbennen</button>
+    </div>
     <input type="text" id="myInput" placeholder="Neuer Eintrag...">
     <span onclick="newElement()" class="addBtn">Hinzufügen</span>
-    <ul id="myTODO" class="list-group">
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          Eine TODO Liste erstellen
-        </li>
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          Ein Buch lesen
-        </li>
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          Joggen
-        </li>
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          Abwaschen
-        </li>
-        <li class="list-group-item">
-          <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-          Den Stuhl reparieren
-        </li>
-      </ul>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Titel</th>
+          <th>Deadline</th>
+          <th>Fortschritt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-check-input me-1" type="checkbox">
+            Müll wegbringen</td>
+          <td>24.Mai 2022</td>
+          <td name="percent">15%</td>
+        </tr>
+        <tr>
+          <td><input class="form-check-input me-1" type="checkbox" checked>
+            Plastikblumen bestellen</td>
+          <td>30.Juni 2020</td>
+          <td name="percent">10%</td>
+        </tr>
+        <tr>
+          <td><input class="form-check-input me-1" type="checkbox">
+            Garage reparieren</td>
+          <td>28.Juni 2023</td>
+          <td name="percent">25%</td>
+        </tr>
+        <tr>
+          <td><input class="form-check-input me-1" type="checkbox">
+            Garage reparieren</td>
+          <td>28.Juni 2023</td>
+          <td name="percent">25%</td>
+        </tr>
+      </tbody>
+    </table>
 </body>
-<!-- Benutzter Guide für TODO Listen:
+<!-- used guide for TODO lists:
     https://www.w3schools.com/howto/howto_js_todolist.asp //-->
+
 <!-- CSS -->
 <style>
 h1 {
-  margin: 0px;
   padding: 20px;
   text-align: center;
   font-size: 40px;
   background-color: rgb(207, 87, 87);
 }
+h3 {
+  padding: 20px;
+  font-size: 30px;
+}
 nav {
-  margin: 30px;
+  padding: 5px;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+  width: 100%;
+  background-color: lightgrey;
+  color: black;
+}
+a {
+  color:darkslategrey;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 input {
   margin: 0;
   width: 60%;
   padding: 10px;
   font-size: 20px;
-}
-ul li {
-  position: relative;
-  font-size: 30px;
-}
-ul li:nth-child(odd) {
-  background: #c6c6f0;
-}
-ul li:nth-child(even) {
-  background: #e2e2f1;
 }
 .addBtn {
   padding: 15px;
@@ -100,23 +118,34 @@ ul li:nth-child(even) {
   background-color: #f44336;
 }
 .edit {
-    text-align: right;
+  text-align: right;
 }
 #edit {
-    padding: 15px;
-    font-size: 20px;
+  padding: 15px;
+  font-size: 20px;
+}
+#hb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgreen;
+  margin: 20px 0px 0px 0px;
 }
 #title {
   width: 80%;
   margin: 10px 0px;
   font-size: 30px;
 }
+#rename {
+  font-size: 30px;
+  margin: 0px 30px;
+}
 </style>
 
 <!-- Javascript -->
 <script>
-//close Button for li
-var todolist = document.getElementsByTagName("LI");
+//close button for li
+var todolist = document.getElementsByName("percent");
 for (var i = 0; i < todolist.length; i++) {
     var btn = document.createElement("button");
     var txt = document.createTextNode("\u00D7");
@@ -124,7 +153,6 @@ for (var i = 0; i < todolist.length; i++) {
     btn.appendChild(txt);
     todolist[i].appendChild(btn); 
 }
-
 //close button hides li (maybe later)
 /*
 var close = document.getElementsByClassName("close");
@@ -169,6 +197,7 @@ function newElement() {
 <script 
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
-	crossorigin="anonymous"></script>
+	crossorigin="anonymous">
+</script>
 
 </html>

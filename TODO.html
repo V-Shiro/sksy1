@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <title>Übersicht</title>
-    <meta name="author" content="Vincent Wehr">
+    <meta name="author" content="Vincent Wehr, Wael Muhsen">
     <meta name="keywords" content="Hausarbeit,Praktikum">
     <meta charset="UTF-8"/>
 
@@ -16,7 +16,7 @@
 </head>
 <body>
     <header>
-        <h1>Übersicht</h1>
+        <h1><b>Übersicht</b></h1>
     </header>
     <nav>
         <a href="MeinTODO.html">Mein TODO</a>
@@ -42,25 +42,25 @@
           <td><input class="form-check-input me-1" type="checkbox">
             Badezimmer schrubben</td>
           <td>24.Mai 2022</td>
-          <td name="percent">99%</td>
+          <td>99%</td>
         </tr>
         <tr>
           <td><input class="form-check-input me-1" type="checkbox" checked>
             Fenster putzen</td>
           <td>24.Mai 2022</td>
-          <td name="percent">100%</td>
+          <td>100%</td>
         </tr>
         <tr>
           <td><input class="form-check-input me-1" type="checkbox" checked>
             Staubsaugen</td>
           <td>25.Mai 2022</td>
-          <td name="percent">100%</td>
+          <td>100%</td>
         </tr>
         <tr>
           <td><input class="form-check-input me-1" type="checkbox">
             Blumen gießen</td>
           <td>25.Mai 2022</td>
-          <td name="percent">0%</td>
+          <td>0%</td>
         </tr>
       </tbody>
     </table>
@@ -84,19 +84,19 @@
           <td><input class="form-check-input me-1" type="checkbox">
             Obst und Gemüse</td>
           <td>24.Mai 2022</td>
-          <td name="percent">15%</td>
+          <td>15%</td>
         </tr>
         <tr>
           <td><input class="form-check-input me-1" type="checkbox" checked>
             Schokolade</td>
           <td>23.April 2022</td>
-          <td name="percent">100%</td>
+          <td>100%</td>
         </tr>
         <tr>
           <td><input class="form-check-input me-1" type="checkbox">
             neue Blumen</td>
           <td>23.April 2022</td>
-          <td name="percent">0%</td>
+          <td>0%</td>
         </tr>
       </tbody>
     </table>
@@ -120,27 +120,26 @@
           <td><input class="form-check-input me-1" type="checkbox">
             Müll wegbringen</td>
           <td>24.Mai 2022</td>
-          <td name="percent">15%</td>
+          <td>15%</td>
         </tr>
         <tr>
           <td><input class="form-check-input me-1" type="checkbox">
             Plastikblumen bestellen</td>
           <td>30.Juni 2020</td>
-          <td name="percent">10%</td>
+          <td>10%</td>
         </tr>
         <tr>
           <td><input class="form-check-input me-1" type="checkbox">
             Garage reparieren</td>
           <td>28.Juni 2023</td>
-          <td name="percent">25%</td>
+          <td>25%</td>
         </tr>
       </tbody>
     </table>
-
-
 </body>
 <!-- used guide for TODO-Lists:
     https://www.w3schools.com/howto/howto_js_todolist.asp //-->
+
 <!-- CSS -->
 <style>
 h1 {
@@ -155,9 +154,17 @@ h3 {
   background-color: lightgreen;
 }
 nav {
-  margin: 30px;
+  padding: 5px;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+  width: 100%;
+  background-color: lightgrey;
+  color: black;
+}
+a {
+    color:darkslategrey;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 td {
   position: relative;
@@ -203,7 +210,6 @@ for (var i = 0; i < todolist.length; i++) {
     todolist[i].appendChild(btn); 
 }
 */
-
 /*add element maybe later
 function newElement() {
     //list element
