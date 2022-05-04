@@ -27,11 +27,15 @@
       <h3>Beispiel 1 Jahresputz</h3>
       <button id="rename">Umbennen</button>
     </div>
-    <input type="text" id="myInput" placeholder="Neuer Eintrag...">
-    <span onclick="newElement()" class="addBtn">Hinzufügen</span>
-    <table class="table table-striped">
+    <form action="">
+      <input type="text" id="titleInput" placeholder="Neuer Eintrag..." />
+      <input type="date" id="deadlineInput" />
+      <input type="number" id="percentInput" min="0" max="100" />
+      <input type="submit" onclick="newElement()" class="addBtn" value="Hinzufügen"/>
+    </form>
+    <table class="table table-striped" id="todoTable">
       <thead>
-        <tr>
+        <tr>*
           <th>Titel</th>
           <th>Deadline</th>
           <th>Fortschritt</th>
@@ -93,24 +97,33 @@ a {
   padding-left: 15px;
   padding-right: 15px;
 }
-input {
-  margin: 0;
-  width: 60%;
+td {
+  position: relative;
+  font-size: 20px;
+}
+#titleInput {
+  width: 50%;
   padding: 10px;
   font-size: 20px;
 }
-.addBtn {
-  padding: 15px;
-  width: 25%;
-  background: #d9d9d9;
-  text-align: center;
+#deadlineInput {
+  width: 150px;
+  padding: 10px;
   font-size: 20px;
-  cursor: pointer;
+}
+#percentInput {
+  width: 80px;
+  font-size: 20px;
+  padding: 10px;
+}
+.addBtn {
+  padding: 10px;
+  font-size: 20px;
 }
 .close {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 0px;
+  top: 0px;
   padding: 6px 16px;
   background-color: lightsalmon;
 }
@@ -165,19 +178,27 @@ for (i = 0; i < close.length; i++) {
 }
 */
 //add element (maybe later, some problems with adding checkbox)
-/*
 function newElement() {
-    var li = document.createElement("li");
-    var inputValue = document.getElementById("myInput").value;
-    var t = document.createTextNode(inputValue);
-    li.appendChild(t);
-    li.classList.add("list-group-item");
-    if (inputValue === '') {
-        alert("Keine leeren Einträge.");
-    } else {
-        document.getElementById("myTODO").appendChild(li);
+    var table = document.getElementById("todoTable");
+    var row = table.insertRow(0);
+    var title = row.insterCell(0);
+    var deadline = row.insterCell(1);
+    var percent = row.insterCell(2);
+    if (title.value = document.getElementById("titleInput").value === ''){
+        alert("Keine leeren Titel.");
+        return;
     }
-    document.getElementById("myInput").value = "";
+    if (deadline.value = document.getElementById("deadlineInput").value === ''){
+        alert("Bitte ein Datum auswählen.");
+        return;
+    }
+    if (percent.value = document.getElementById("percentInput").value === ''){
+        percent.value = "0%";
+    }
+    table.appendChild(row);
+    return;
+}    
+/*
     //close button
     var btn = document.createElement("button");
     var txt = document.createTextNode("\u00D7");
