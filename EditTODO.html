@@ -20,7 +20,7 @@
     </header>
     <nav>
         <a href="TODO.html">Übersicht</a>
-        <a href="MeinTODO.html">Mein TODO</a>
+        <a href="NewTODO.html">Neues TODO</a>
         <a href="Impressum.html">Impressum</a>
     </nav>
     <div id="hb">
@@ -35,7 +35,7 @@
     </form>
     <table class="table table-striped" id="todoTable">
       <thead>
-        <tr>*
+        <tr>
           <th>Titel</th>
           <th>Deadline</th>
           <th>Fortschritt</th>
@@ -43,26 +43,22 @@
       </thead>
       <tbody>
         <tr>
-          <td><input class="form-check-input me-1" type="checkbox">
-            Müll wegbringen</td>
+          <td>Müll wegbringen</td>
           <td>24.Mai 2022</td>
           <td name="percent">15%</td>
         </tr>
         <tr>
-          <td><input class="form-check-input me-1" type="checkbox" checked>
-            Plastikblumen bestellen</td>
+          <td>Plastikblumen bestellen</td>
           <td>30.Juni 2020</td>
           <td name="percent">10%</td>
         </tr>
         <tr>
-          <td><input class="form-check-input me-1" type="checkbox">
-            Garage reparieren</td>
+          <td>Garage reparieren</td>
           <td>28.Juni 2023</td>
           <td name="percent">25%</td>
         </tr>
         <tr>
-          <td><input class="form-check-input me-1" type="checkbox">
-            Garage reparieren</td>
+          <td>Garage reparieren</td>
           <td>28.Juni 2023</td>
           <td name="percent">25%</td>
         </tr>
@@ -157,7 +153,7 @@ td {
 
 <!-- Javascript -->
 <script>
-//close button for li
+//close button for tr after percent
 var todolist = document.getElementsByName("percent");
 for (var i = 0; i < todolist.length; i++) {
     var btn = document.createElement("button");
@@ -166,17 +162,10 @@ for (var i = 0; i < todolist.length; i++) {
     btn.appendChild(txt);
     todolist[i].appendChild(btn); 
 }
-//close button hides li (maybe later)
-/*
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
-    }
-}
-*/
+
+/*############ functionality for maybe later ################*/
+//close button hides tr (maybe later)
+
 //add element (maybe later, some problems with adding checkbox)
 function newElement() {
     var table = document.getElementById("todoTable");
@@ -199,17 +188,12 @@ function newElement() {
     return;
 }    
 /*
-    //close button
+    //and close button
     var btn = document.createElement("button");
     var txt = document.createTextNode("\u00D7");
     btn.className = "close";
     btn.appendChild(txt);
     li.appendChild(btn); 
-    //check box
-    input = document.createElement("input");
-    input.classList.add("form-check-input me-1");
-    input.setAttribute(type,"checkbox")
-    li.appendChild(input);
 }
 */
 </script>
