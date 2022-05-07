@@ -65,8 +65,6 @@
       </tbody>
     </table>
 </body>
-<!-- used guide for TODO lists:
-    https://www.w3schools.com/howto/howto_js_todolist.asp //-->
 
 <!-- CSS -->
 <style>
@@ -113,8 +111,12 @@ td {
   padding: 10px;
 }
 .addBtn {
-  padding: 10px;
+  padding: 15px;
+  width: 25%;
+  background: #d9d9d9;
+  text-align: center;
   font-size: 20px;
+  cursor: pointer;
 }
 .close {
   position: absolute;
@@ -127,11 +129,10 @@ td {
   background-color: #f44336;
 }
 .edit {
-  text-align: right;
-}
-#edit {
-  padding: 15px;
-  font-size: 20px;
+  position: absolute;
+  font-size: 25px;
+  right: 60px;
+  top: 2px;
 }
 #hb {
   display: flex;
@@ -151,6 +152,9 @@ td {
 }
 </style>
 
+<!-- used guide for TODO lists:
+    https://www.w3schools.com/howto/howto_js_todolist.asp //-->
+
 <!-- Javascript -->
 <script>
 //close button for tr after percent
@@ -161,6 +165,12 @@ for (var i = 0; i < todolist.length; i++) {
     btn.className = "close";
     btn.appendChild(txt);
     todolist[i].appendChild(btn); 
+    var btnEdit = document.createElement("button");
+    var editTxt = document.createTextNode("Edit");
+    btnEdit.className = "edit";
+    btnEdit.appendChild(editTxt);
+    todolist[i].appendChild(btnEdit);
+
 }
 
 /*############ functionality for maybe later ################*/

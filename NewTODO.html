@@ -20,11 +20,16 @@
     </header>
     <nav>
         <a href="TODO.html">Übersicht</a>
+        <a href="NewTODO.html">Neues TODO</a>
         <a href="Impressum.html">Impressum</a>
     </nav>
     <input type="text" id="title" placeholder="Beispiel 2 Einkaufen...">
-    <input type="text" id="myInput" placeholder="Neuer Eintrag...">
-    <span onclick="newElement()" class="addBtn">Hinzufügen</span>
+    <form action="">
+      <input type="text" id="titleInput" placeholder="Neuer Eintrag..." />
+      <input type="date" id="deadlineInput" />
+      <input type="number" id="percentInput" min="0" max="100" />
+      <input type="submit" onclick="newElement()" class="addBtn" value="Hinzufügen"/>
+    </form>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -79,23 +84,34 @@ nav {
   color: black;
 }
 a {
-    color:darkslategrey;
-    padding-left: 15px;
-    padding-right: 15px;
+  color:darkslategrey;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 #title {
   width: 80%;
-  margin: 10px 0px;
+  margin: 30px 0px 10px 0px;
+  padding: 15px 0px;
   font-size: 30px;
-}
-input {
-  width: 60%;
-  padding: 10px;
-  font-size: 20px;
 }
 td {
   position: relative;
   font-size: 20px;
+}
+#titleInput {
+  width: 50%;
+  padding: 10px;
+  font-size: 20px;
+}
+#deadlineInput {
+  width: 150px;
+  padding: 10px;
+  font-size: 20px;
+}
+#percentInput {
+  width: 80px;
+  font-size: 20px;
+  padding: 10px;
 }
 .addBtn {
   padding: 15px;
@@ -114,13 +130,6 @@ td {
 }
 .close:hover {
   background-color: #f44336;
-}
-.edit {
-  text-align: right;
-}
-#edit {
-  padding: 15px;
-  font-size: 20px;
 }
 #addToMain {
   font-size: 30px;
